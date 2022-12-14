@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:todoapp_yellow/my_button.dart';
 
@@ -16,15 +18,17 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       backgroundColor: Colors.yellow[300],
       content: Container(
-        height: 150,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // kullanıcıdan veri al
             TextField(
               controller: controller,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Yeni Not Ekle",
@@ -38,7 +42,7 @@ class DialogBox extends StatelessWidget {
                 // kaydet butonu
                 MyButton(text: "Kaydet", onPressed:kayitEt),
 
-                const SizedBox(width: 10,),
+                const SizedBox(width: 12,),
 
                 // iptal butonu
                 MyButton(text: "İptal", onPressed:iptalEt),

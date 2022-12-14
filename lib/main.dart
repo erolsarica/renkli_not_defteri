@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
       theme: ThemeData(
           textTheme: TextTheme(bodyMedium: GoogleFonts.zillaSlab(fontWeight: FontWeight.bold, fontSize: 18)),
           primarySwatch: Colors.yellow),
