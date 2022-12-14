@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todoapp_yellow/dialog_box.dart';
 import 'package:todoapp_yellow/todo_tile.dart';
@@ -79,6 +80,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.yellow, // <-- SEE HERE
+        statusBarIconBrightness: Brightness.dark,),
           //title: Text('NOT DEFTERİ', textAlign: TextAlign.center,),
           //centerTitle: true,
           /*flexibleSpace: Center(
@@ -109,10 +113,39 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.only(bottomRight: Radius.circular(50), bottomLeft: Radius.circular(50))
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        label: const Text('Ekle'),
-        icon: const Icon(Icons.add, size: 26,),
-        onPressed: yeniGorevEkle,
+/*
+      floatingActionButton: Container(
+        height: 70,
+        width: 70,
+        child: Material(
+          type: MaterialType
+              .transparency,
+          child: Ink(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 1.0),
+              color: Colors.yellow,
+              shape: BoxShape.circle,
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(50.0),
+              onTap: yeniGorevEkle,
+              child: Icon(Icons.add, size: 28,),
+            ),
+          ),
+        ),
+      ),
+
+ */
+
+      floatingActionButton: SizedBox(
+        height: 60,
+        width: 120,
+        child: FloatingActionButton.extended(
+          label: const Text('Ekle', style: TextStyle(fontSize: 16),),
+          icon: const Icon(Icons.add, size: 26,),
+          onPressed: yeniGorevEkle,
+          splashColor: Colors.black,
+        ),
       ),
 
       body: ListView.builder(
