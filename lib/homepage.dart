@@ -80,12 +80,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
+        /*
         systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: Colors.yellow, // <-- SEE HERE
-        statusBarIconBrightness: Brightness.dark,),
+        statusBarColor: Colors.yellow
+        ),
+
+         */
+
           //title: Text('NOT DEFTERİ', textAlign: TextAlign.center,),
           //centerTitle: true,
-          /*flexibleSpace: Center(
+          /* flexibleSpace: Center(
             child: Container(
               child: Align(
                 alignment: Alignment.center,

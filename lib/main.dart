@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todoapp_yellow/homepage.dart';
+import 'package:todoapp_yellow/onboarding/onboarding_screen.dart';
 
 void main() async{
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const OnBoardingScreen(),
       theme: ThemeData(
           textTheme: TextTheme(bodyMedium: GoogleFonts.zillaSlab(fontWeight: FontWeight.bold, fontSize: 18)),
           primarySwatch: Colors.yellow),
